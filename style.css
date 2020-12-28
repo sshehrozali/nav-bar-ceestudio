@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+body{
+    background: white;
+}
+
+    nav{
+        display: flex;
+    }
+
+        a{  
+            font-family: 'Playfair Display';
+            font-weight: 400;
+
+            transition: all .3s;
+        }
+
+        span{
+            font-family: 'Raleway';
+            font-weight: 900;
+            font-size: 25px;
+            color: #1c1c21;
+
+            position: absolute;
+            left: -100%;
+            top: 4%;
+
+            transition: all .5s;
+        }
+
+/* MEDIA QUERIES */
+/* Phones, Mobiles and Tablets */
+@media only screen and (max-width: 992px) {
+
+    nav{
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100vh;
+
+        background: none;
+    }
+
+        label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 10%;
+            height: 10%;
+
+            font-size: 70px;
+            font-weight: 700;
+            color: #006661;
+
+            background: none;
+
+            position: relative;
+            left: 85%;
+
+            transition: all .3s;
+        }
+
+            #open:hover{
+                transform: scale(.80);
+
+                background: #2e2e3225;
+
+                border: none;
+                border-radius: 3px;
+            }
+
+            #close{
+                position: absolute;
+                top: 0;
+                left: 100%;
+
+                opacity: 0;
+            }
+
+                #close:hover{
+                    transform: scale(.80);
+
+                    background: #2e2e3225;
+
+                    border: none;
+                    border-radius: 3px;
+                }
+
+        #toggle{
+            display: none;
+        }
+
+            #toggle:checked ~ #open{
+                display: none;
+            }
+
+            #toggle:checked ~ #close{
+                position: relative;
+                left: 85%;    
+
+                opacity: 100%;
+            }
+
+            #toggle:checked ~ .links{
+                left: 0;
+            }
+
+            #toggle:checked ~ span{
+                left: 5%;
+            }
+
+        .links{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            width: 100%;
+            height: 90%;
+
+            background: #1c1c21;
+
+            position: relative;
+            left: -100%;
+
+            transition: all .3s;
+        }
+
+            a{
+                width: 100%;
+
+                font-size: 28px;
+                color: white;
+                text-align: center;
+            }
+
+                a:hover{
+                    color: #2e2e32;
+
+                    transform: scale(0.95);
+                }
+
+                #active{
+                    font-weight: 700;
+                    color: #006661;
+
+                    text-decoration: underline;
+                }
+}
+
+/* Large screens, Laptops, Desktops and above */
+@media only screen and (min-width: 992px) {
+
+    nav{
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        width: 100%;
+        height: 80px;
+
+        background: white;
+    }
+
+        label{
+            display: none;
+        }
+
+        #toggle{
+            display: none;
+        }
+
+        .links{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            width: 90%;
+
+            background: none
+        }
+
+            a{
+                color: #1c1c21;
+
+                padding: 25px;
+
+                border-top: 3px solid white;
+            }
+
+                a:hover{
+                    color: #2e2e3267;
+
+                    border-top: 3px solid #2e2e3262;
+
+                    transform: scale(.95);
+                }
+
+                #active{
+                    font-weight: 700;
+                    color: #006661;
+                    
+                    border-top: 3px solid #006661;
+                }
+
+            span{
+                display: none;
+            }
+}
