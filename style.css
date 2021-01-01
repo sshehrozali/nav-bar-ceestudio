@@ -161,7 +161,7 @@ body{
 
     nav{
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
 
         width: 100%;
@@ -181,7 +181,7 @@ body{
         .links{
             display: flex;
             flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
 
             width: 90%;
 
@@ -193,7 +193,7 @@ body{
 
                 padding: 25px;
 
-                border-top: 3px solid white;
+                border-top: 5px solid white;
             }
 
                 a:hover{
@@ -208,7 +208,7 @@ body{
                     font-weight: 700;
                     color: #006661;
                     
-                    border-top: 3px solid #006661;
+                    border-top: 5px solid #006661;
                 }
 
             span{
