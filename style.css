@@ -1,3 +1,10 @@
+/* Color Palette
+#1C1C21 - Black
+#C81927 - Red
+#006661 - Green
+#FFFFFF - White
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +14,11 @@
 }
 
 body{
-    background: white;
+    background: url(bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
     nav{
@@ -25,7 +36,7 @@ body{
             font-family: 'Raleway';
             font-weight: 900;
             font-size: 25px;
-            color: #1c1c21;
+            color: white;
 
             position: absolute;
             left: -100%;
@@ -33,6 +44,17 @@ body{
 
             transition: all .5s;
         }
+
+    footer{
+        position: absolute;
+        right: 2vw;
+        bottom: 2vw;
+
+        font-family: 'Raleway';
+        color: rgba(1, 1, 1, 0.5);
+
+        z-index: -1;
+    }
 
 /* MEDIA QUERIES */
 /* Phones, Mobiles and Tablets */
@@ -43,7 +65,7 @@ body{
         flex-direction: column;
 
         width: 100%;
-        height: 100vh;
+        height: 10vh;
 
         background: none;
     }
@@ -62,8 +84,10 @@ body{
 
             background: none;
 
-            position: relative;
-            left: 85%;
+            position: absolute;
+            left: 85vw;
+
+            z-index: 1;
 
             transition: all .3s;
         }
@@ -80,9 +104,13 @@ body{
             #close{
                 position: absolute;
                 top: 0;
-                left: 100%;
+                left: 85vw;
 
                 opacity: 0;
+
+                z-index: 1;
+
+                transition: all .3s;
             }
 
                 #close:hover{
@@ -99,13 +127,10 @@ body{
         }
 
             #toggle:checked ~ #open{
-                display: none;
+                opacity: 0;
             }
 
             #toggle:checked ~ #close{
-                position: relative;
-                left: 85%;    
-
                 opacity: 100%;
             }
 
@@ -124,12 +149,12 @@ body{
             justify-content: space-evenly;
 
             width: 100%;
-            height: 90%;
+            height: 100vh;
 
             background: #1c1c21;
 
-            position: relative;
-            left: -100%;
+            position: absolute;
+            left: -100vw;
 
             transition: all .3s;
         }
@@ -153,7 +178,7 @@ body{
                     color: #006661;
 
                     text-decoration: underline;
-                }
+                }    
 }
 
 /* Large screens, Laptops, Desktops and above */
